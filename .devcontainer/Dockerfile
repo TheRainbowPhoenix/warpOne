@@ -18,7 +18,7 @@ RUN wget "http://archive.apache.org/dist/thrift/0.17.0/thrift-0.17.0.tar.gz"
 RUN echo "b272c1788bb165d99521a2599b31b97fa69e5931d099015d91ae107a0b0cc58f  thrift-0.17.0.tar.gz" | sha256sum -c -
 RUN tar xf thrift-0.17.0.tar.gz
 RUN cd thrift-0.17.0
-RUN sudo mkdir -p /opt/thrift-0.17.0
+RUN mkdir -p /opt/thrift-0.17.0
 RUN ./bootstrap.sh
 RUN ./configure \
     --prefix=/opt/thrift-0.17.0 \
