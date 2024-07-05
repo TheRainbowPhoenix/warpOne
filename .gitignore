@@ -48,3 +48,5 @@ bin/
 *.tmp
 *.bak
 *.swp
+
+thrift-0.17.0

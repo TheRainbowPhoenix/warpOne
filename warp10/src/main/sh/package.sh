@@ -48,11 +48,11 @@ if [ ! -d "${WARP_ROOT_PATH}" ]; then
   exit 1
 fi
 
-GPG_KEY_NAME=$3
-if [ -z "${GPG_KEY_NAME:+x}" ]; then
-  echo "Usage: $0 VERSION WARP_ROOT_PATH GPG_KEY_NAME"
-  exit 1
-fi
+# GPG_KEY_NAME=$3
+# if [ -z "${GPG_KEY_NAME:+x}" ]; then
+#   echo "Usage: $0 VERSION WARP_ROOT_PATH GPG_KEY_NAME"
+#   exit 1
+# fi
 
 ARCHIVE=${WARP_ROOT_PATH}/archive
 
@@ -123,7 +123,7 @@ FILE=../build/libs/warp10-${VERSION}.tar.gz
 tar czpf "${FILE}" "${WARP10_HOME}"
 
 # Generate signature
-gpg --local-user "${GPG_KEY_NAME}" --output "${FILE}".asc --detach-sign "${FILE}"
+# gpg --local-user "${GPG_KEY_NAME}" --output "${FILE}".asc --detach-sign "${FILE}"
 
 # Generate hash
 sha512sum "${FILE}" | sed -e "s@  .*/@  @" > "${FILE}".sha512
